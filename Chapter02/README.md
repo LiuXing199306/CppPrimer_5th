@@ -102,6 +102,51 @@ int main()
 
 ```
 
+> 练习2.9：解释下列定义的含义。对于非法的定义，请说明错在何处并将其改正。
+>
+> ```c++
+> (a)std::cin >> int input_value;
+> (b)int i = {3.14};
+> (c)double salary = wage = 9999.99;
+> (d)int i = 3.14;
+> ```
+
+(a)操作符`>>`右侧为变量，而不是变量定义，修改为：
+
+```C++
+int input_value;
+std::cin >> input_value;
+```
+
+(b) 初始值`3.14`在赋值给整型变量`i`的时候存在精度损失，因此编译器将报错。修改如下：
+
+```c++
+int i = 3.14;
+```
+
+(c)变量`wage`没有被定义，便被用来给变量`salary`进行初始化。修改如下：
+
+```c++
+double wage = 9999.99;
+double salary = wage;
+```
+
+(d)发生隐式类型转换。
+
+> 练习2.10：下列变量的初值分别是什么？
+>
+> ```c++
+> std::string global_str;
+> int global_int;
+> int main()
+> {
+>     int local_int;
+>     std::string local_str;
+> }
+> ```
+
+变量`global_str`和变量`local_str`的初始值均为空字符串，变量`global_int`的初始值为0，变量`local_int`的初始值为未定义的。
+
 > 练习2.11：指出下面的语句是声明还是定义。
 >
 > ```C++
@@ -134,7 +179,7 @@ int main()
 
 (d)不合法，标识符只能以字母和下划线开头，不能以数字开头。
 
-(d)合法。
+(e)合法。
 
 > 练习2.13：下面程序中j的值是什么？
 >
