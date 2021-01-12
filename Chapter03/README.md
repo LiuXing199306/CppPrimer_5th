@@ -270,6 +270,28 @@ int main()
 
 (c)正确，创建一个含有10个"null"的字符串。
 
+> 练习3.13：下列的vector对象各包含多少个元素？这些元素的值分别是什么？
+>
+> ```c++
+> (a)vector<int> v1;
+> (b)vector<int> v2(10);
+> (c)vector<int> v3(10,42);
+> (d)vector<int> v4{10};
+> (e)vector<int> v5{10,42};
+> (f)vector<string> v6{10};
+> (g)vector<string> v7{10,"hi"};
+> ```
+
+```c++
+(a)vector<int> v1; // v1含有0个元素
+(b)vector<int> v2(10); // v2含有10个元素，均为0
+(c)vector<int> v3(10,42); // v3含有10个元素，均为42
+(d)vector<int> v4{10}; // v4含有1个元素，为10
+(e)vector<int> v5{10,42}; // v5含有2个元素，分别为10和42
+(f)vector<string> v6{10}; // v6含有10个元素，均为""
+(g)vector<string> v7{10,"hi"}; // v7含有10个元素，均为"hi"
+```
+
 > 练习3.14：编写一段程序，用cin读入一组整数并把它们存入一个vecotr对象。
 
 ```C++
